@@ -1,0 +1,288 @@
+{
+  "brief_name": "",
+  "name": "banner",
+  "recommends": [
+    {
+      "detail": {
+        "channel_star": 10,
+        "chatgroup_id": 0,
+        "description": "",
+        "detail": {},
+        "duration": 1232,
+        "id": 4370881,
+        "mediainfo": {
+          "bitrates_url": [
+            {
+              "bitrate": 62,
+              "file_path": "m4a/5731b5437cb891033a8c328d_5123249_64.m4a",
+              "qetag": "lipa6PsbYI8Kh8zYsMvpPLlHSn9S"
+            },
+            {
+              "bitrate": 22,
+              "file_path": "m4a/5731b5437cb891033a8c328d_5123249_24.m4a",
+              "qetag": "FrNWpM9RdHPKHgIV7grtQSJT2OWY"
+            }
+          ],
+          "duration": 1232,
+          "id": 5123249
+        },
+        "sequence": 0,
+        "thumbs": null,
+        "title": "最强弃少 第1集",
+        "type": "program_ondemand",
+        "update_time": "2016-05-10 18:17:39"
+      },
+      "id": 2001,
+      "object_id": 4370881,
+      "parent_info": {
+        "parent_extra": {
+          "category_id": 521
+        },
+        "parent_id": 154338,
+        "parent_name": "最强弃少",
+        "parent_type": "channel_ondemand"
+      },
+      "sequence": 1,
+      "sub_title": "",
+      "thumb": "http://pic.qingting.fm/2016/0608/20160608181409360.jpg",
+      "thumbs": {
+        "large_thumb": "http://pic.qingting.fm/2016/0608/20160608181409360.jpg!large",
+        "medium_thumb": "http://pic.qingting.fm/2016/0608/20160608181409360.jpg!medium",
+        "small_thumb": "http://pic.qingting.fm/2016/0608/20160608181409360.jpg!small"
+      },
+      "title": "遭人白眼的弃儿如何成为王的男人",
+      "update_time": "2016-06-09 00:41:46"
+    },
+    {
+      "detail": {
+        "channel_star": 6,
+        "chatgroup_id": 0,
+        "description": "",
+        "detail": {},
+        "duration": 3816,
+        "id": 4543737,
+        "mediainfo": {
+          "bitrates_url": [
+            {
+              "bitrate": 62,
+              "file_path": "m4a/5758c2997cb89103386ffbcf_5275205_64.m4a",
+              "qetag": "li3UP3ZQ58BWD-LNcsDAaMeueWRh"
+            },
+            {
+              "bitrate": 22,
+              "file_path": "m4a/5758c2997cb89103386ffbcf_5275205_24.m4a",
+              "qetag": "luuI7_ZfwRzSAasUiSDxPOWO24Be"
+            }
+          ],
+          "duration": 3816,
+          "id": 5275205
+        },
+        "sequence": 0,
+        "thumbs": null,
+        "title": "0608期：徐帆高调示爱冯小刚：你就是我的命！",
+        "type": "program_ondemand",
+        "update_time": "2016-06-09 09:30:02"
+      },
+      "id": 2002,
+      "object_id": 4543737,
+      "parent_info": {
+        "parent_extra": {
+          "category_id": 3251
+        },
+        "parent_id": 96988,
+        "parent_name": "金星秀",
+        "parent_type": "channel_ondemand"
+      },
+      "sequence": 2,
+      "sub_title": "",
+      "thumb": "http://pic.qingting.fm/2016/0609/20160609093238324.jpg",
+      "thumbs": {
+        "large_thumb": "http://pic.qingting.fm/2016/0609/20160609093238324.jpg!large",
+        "medium_thumb": "http://pic.qingting.fm/2016/0609/20160609093238324.jpg!medium",
+        "small_thumb": "http://pic.qingting.fm/2016/0609/20160609093238324.jpg!small"
+      },
+      "title": "徐帆高调示爱冯小刚：你就是我的命！",
+      "update_time": "2016-06-09 09:32:38"
+    },
+    {
+      "detail": {
+        "channel_star": 10,
+        "chatgroup_id": 0,
+        "description": "",
+        "detail": {},
+        "duration": 251,
+        "id": 4536138,
+        "mediainfo": {
+          "bitrates_url": [
+            {
+              "bitrate": 62,
+              "file_path": "m4a/5756952c7cb89103386ff24d_5268221_64.m4a",
+              "qetag": "FsZmg3tiJWHY8vQyfMOUL-CoXoXy"
+            },
+            {
+              "bitrate": 22,
+              "file_path": "m4a/5756952c7cb89103386ff24d_5268221_24.m4a",
+              "qetag": "FoHnKvkYCZyx20DXAH_YtKfT3hgc"
+            }
+          ],
+          "duration": 251,
+          "id": 5268221
+        },
+        "sequence": 0,
+        "thumbs": null,
+        "title": "2016年高考作文出炉，我们应该怎么写？",
+        "type": "program_ondemand",
+        "update_time": "2016-06-07 17:35:35"
+      },
+      "id": 2003,
+      "object_id": 4536138,
+      "parent_info": {
+        "parent_extra": {
+          "category_id": 537
+        },
+        "parent_id": 132064,
+        "parent_name": "作文素材天天读",
+        "parent_type": "channel_ondemand"
+      },
+      "sequence": 3,
+      "sub_title": "",
+      "thumb": "http://pic.qingting.fm/2016/0608/2016060813370717.jpg",
+      "thumbs": {
+        "large_thumb": "http://pic.qingting.fm/2016/0608/2016060813370717.jpg!large",
+        "medium_thumb": "http://pic.qingting.fm/2016/0608/2016060813370717.jpg!medium",
+        "small_thumb": "http://pic.qingting.fm/2016/0608/2016060813370717.jpg!small"
+      },
+      "title": "2016年高考作文出炉，我们应该怎么写？",
+      "update_time": "2016-06-09 00:41:25"
+    },
+    {
+      "detail": {
+        "description": "",
+        "id": 235,
+        "network": "",
+        "thumb": "http://pic.qingting.fm/2016/0608/20160608121549625.jpg",
+        "title": "张震讲故事",
+        "type": "activity",
+        "url": "http://ac.qingting.fm/ac/159/release?hehe=1"
+      },
+      "id": 2004,
+      "object_id": 235,
+      "parent_info": null,
+      "sequence": 4,
+      "sub_title": "",
+      "thumb": "http://pic.qingting.fm/2016/0608/20160608121549625.jpg",
+      "thumbs": {
+        "large_thumb": "http://pic.qingting.fm/2016/0608/20160608121549625.jpg!large",
+        "medium_thumb": "http://pic.qingting.fm/2016/0608/20160608121549625.jpg!medium",
+        "small_thumb": "http://pic.qingting.fm/2016/0608/20160608121549625.jpg!small"
+      },
+      "title": "蜻蜓君喊你来抢票《张震讲故事之合租屋》7/8火热上映！",
+      "update_time": "2016-06-09 00:41:20"
+    },
+    {
+      "detail": {
+        "channel_star": 10,
+        "chatgroup_id": 0,
+        "description": "",
+        "detail": {},
+        "duration": 935,
+        "id": 4280585,
+        "mediainfo": {
+          "bitrates_url": [
+            {
+              "bitrate": 62,
+              "file_path": "m4a/5718832f7cb89103386ecbb9_5041856_64.m4a",
+              "qetag": "lo7mJzVGDPSjBZziyEvpTeSksVt7"
+            },
+            {
+              "bitrate": 22,
+              "file_path": "m4a/5718832f7cb89103386ecbb9_5041856_24.m4a",
+              "qetag": "FhCk2uXhEOwPAle_nsgQa0V97vb5"
+            }
+          ],
+          "duration": 935,
+          "id": 5041856
+        },
+        "sequence": 0,
+        "thumbs": null,
+        "title": "真是左宗棠附体？诡异的僵尸男孩",
+        "type": "program_ondemand",
+        "update_time": "2016-06-08 10:47:28"
+      },
+      "id": 2005,
+      "object_id": 4280585,
+      "parent_info": {
+        "parent_extra": {
+          "category_id": 535
+        },
+        "parent_id": 150456,
+        "parent_name": "中国奇异档案",
+        "parent_type": "channel_ondemand"
+      },
+      "sequence": 5,
+      "sub_title": "",
+      "thumb": "http://pic.qingting.fm/2016/0608/20160608151321314.jpg",
+      "thumbs": {
+        "large_thumb": "http://pic.qingting.fm/2016/0608/20160608151321314.jpg!large",
+        "medium_thumb": "http://pic.qingting.fm/2016/0608/20160608151321314.jpg!medium",
+        "small_thumb": "http://pic.qingting.fm/2016/0608/20160608151321314.jpg!small"
+      },
+      "title": "真是左宗棠附体？诡异的僵尸男孩",
+      "update_time": "2016-06-09 00:41:11"
+    },
+    {
+      "detail": {
+        "channel_star": 9,
+        "chatgroup_id": 0,
+        "description": "",
+        "detail": {},
+        "duration": 770,
+        "id": 4426056,
+        "mediainfo": {
+          "bitrates_url": [
+            {
+              "bitrate": 62,
+              "file_path": "m4a/573d6fa37cb891033a8c6eeb_5169649_64.m4a",
+              "qetag": "lndE4-NzxQWvqzcxbKXfOIAj9YFU"
+            },
+            {
+              "bitrate": 22,
+              "file_path": "m4a/573d6fa37cb891033a8c6eeb_5169649_24.m4a",
+              "qetag": "FqklaFGy8YOufVCAK9Q8ubPSspTK"
+            }
+          ],
+          "duration": 770,
+          "id": 5169649
+        },
+        "sequence": 0,
+        "thumbs": null,
+        "title": "听过很多道理，却依旧过不好这一生！",
+        "type": "program_ondemand",
+        "update_time": "2016-05-20 14:54:18"
+      },
+      "id": 2006,
+      "object_id": 4426056,
+      "parent_info": {
+        "parent_extra": {
+          "category_id": 3330
+        },
+        "parent_id": 111834,
+        "parent_name": "男左女右",
+        "parent_type": "channel_ondemand"
+      },
+      "sequence": 6,
+      "sub_title": "",
+      "thumb": "http://pic.qingting.fm/2016/0608/20160608100908674.jpg",
+      "thumbs": {
+        "large_thumb": "http://pic.qingting.fm/2016/0608/20160608100908674.jpg!large",
+        "medium_thumb": "http://pic.qingting.fm/2016/0608/20160608100908674.jpg!medium",
+        "small_thumb": "http://pic.qingting.fm/2016/0608/20160608100908674.jpg!small"
+      },
+      "title": "听过很多道理，却依旧过不好这一生！",
+      "update_time": "2016-06-09 00:41:01"
+    }
+  ],
+  "redirect": null,
+  "section_id": 2,
+  "sequence": -1
+}
