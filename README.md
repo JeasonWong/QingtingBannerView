@@ -14,7 +14,6 @@ A simple banner has infinite loop and animated line.
 * Animated line in bottom
 
 ## Import
-[JitPack](https://jitpack.io/)
 
 Add it in your project's build.gradle at the end of repositories:
 
@@ -51,7 +50,7 @@ dependencies {
 ```
 
 
-#### Step 2 : set banner data :
+#### Step 3 : set banner data :
 ```java
     mBannerView.setEntities(entities);
 ```
