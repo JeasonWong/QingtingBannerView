@@ -1,7 +1,7 @@
 # QingtingBannerView
 仿蜻蜓FM轮播banner
 
-
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QingtingBannerView-green.svg?style=true)](https://android-arsenal.com/details/1/3712)
 
 ## What's QingtingBannerView ?
 A simple banner has infinite loop and animated line.
@@ -29,7 +29,7 @@ Step 2. Add the dependency in the form
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:banner:1.0.0'
+  compile 'me.wangyuwei:banner:1.0.2'
 }
 ```
 
@@ -40,7 +40,8 @@ dependencies {
     <me.wangyuwei.banner.BannerView
         android:id="@+id/banner_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="200dp"
+        qt:qt_line_color="#688fdb" />
 ```
 
 #### Step 2 : Initialize banner data :

@@ -13,27 +13,27 @@ import java.util.List;
  */
 public class BannerPagerAdapter extends PagerAdapter {
 
-    private Context context;
-    private List<BannerEntity> entities = new ArrayList<>();
-    private List<BannerLayout> layouts = new ArrayList<>();
+    private Context mContext;
+    private List<BannerEntity> mEntities = new ArrayList<>();
+    private List<BannerLayout> mLayouts = new ArrayList<>();
 
     public BannerPagerAdapter(Context context, List<BannerEntity> entities) {
-        this.context = context;
-        this.entities = entities;
+        mContext = context;
+        this.mEntities = entities;
         setLayouts();
     }
 
     private void setLayouts() {
-        for (BannerEntity entity : entities) {
-            BannerLayout layout = new BannerLayout(context);
+        for (BannerEntity entity : mEntities) {
+            BannerLayout layout = new BannerLayout(mContext);
             layout.setEntity(entity);
-            layouts.add(layout);
+            mLayouts.add(layout);
         }
     }
 
     @Override
     public int getCount() {
-        return layouts.size();
+        return mLayouts.size();
     }
 
     @Override
@@ -43,13 +43,13 @@ public class BannerPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        container.addView(layouts.get(position), 0);
-        return layouts.get(position);
+        container.addView(mLayouts.get(position), 0);
+        return mLayouts.get(position);
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView(layouts.get(position));
+        container.removeView(mLayouts.get(position));
     }
 
     @Override

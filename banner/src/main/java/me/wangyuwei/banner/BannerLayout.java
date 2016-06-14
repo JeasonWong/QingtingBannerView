@@ -14,33 +14,27 @@ import com.bumptech.glide.Glide;
  */
 public class BannerLayout extends FrameLayout {
 
-    private ImageView iv_banner;
-    private TextView tv_banner_title;
+    private ImageView mIvBanner;
+    private TextView mTvBannerTitle;
 
     public BannerLayout(Context context) {
-        super(context);
-        initView();
+        this(context, null);
     }
 
     public BannerLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        initView();
+        this(context, attrs, 0);
     }
 
     public BannerLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initView();
-    }
-
-    private void initView() {
         View.inflate(getContext(), R.layout.banner_layout, this);
-        iv_banner = (ImageView) this.findViewById(R.id.iv_banner);
-        tv_banner_title = (TextView) this.findViewById(R.id.tv_banner_title);
+        mIvBanner = (ImageView) this.findViewById(R.id.iv_banner);
+        mTvBannerTitle = (TextView) this.findViewById(R.id.tv_banner_title);
     }
 
     public void setEntity(BannerEntity entity) {
-        Glide.with(getContext()).load(entity.imageUrl).centerCrop().crossFade().into(iv_banner);
-        tv_banner_title.setText(entity.title);
+        Glide.with(getContext()).load(entity.imageUrl).centerCrop().crossFade().into(mIvBanner);
+        mTvBannerTitle.setText(entity.title);
     }
 
 

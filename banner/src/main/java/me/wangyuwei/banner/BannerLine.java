@@ -19,27 +19,22 @@ public class BannerLine extends View {
     private float mPageWidth = 0f;
     private int mPosition;
     private float mPositionOffset;
+    private int mLineColor = ContextCompat.getColor(getContext(), R.color.banner_red);
 
     public BannerLine(Context context) {
-        super(context);
-        initView();
+        this(context, null);
     }
 
     public BannerLine(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        initView();
+        this(context, attrs, 0);
     }
 
     public BannerLine(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initView();
-    }
-
-    private void initView() {
         DisplayMetrics dm = getResources().getDisplayMetrics();
         mWidth = dm.widthPixels;
         mPaint = new Paint();
-        mPaint.setColor(ContextCompat.getColor(getContext(), R.color.banner_red));
+        mPaint.setColor(mLineColor);
         mPaint.setAntiAlias(true);
         mPaint.setStrokeWidth(1000f);
     }
@@ -60,7 +55,7 @@ public class BannerLine extends View {
     }
 
     public void setPageWidth(int pageSize) {
-        this.mPageSize = pageSize;
+        mPageSize = pageSize;
         calcPageWidth();
     }
 
@@ -74,4 +69,8 @@ public class BannerLine extends View {
         invalidate();
     }
 
+    public void setLineColor(int lineColor) {
+        mLineColor = lineColor;
+        mPaint.setColor(mLineColor);
+    }
 }

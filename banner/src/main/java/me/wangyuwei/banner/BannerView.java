@@ -1,6 +1,8 @@
 package me.wangyuwei.banner;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
@@ -14,25 +16,29 @@ import java.util.List;
  */
 public class BannerView extends FrameLayout {
 
-    private ViewPager vp_banner;
-    private BannerLine line;
-    private List<BannerEntity> entities = new ArrayList<>();
+    private ViewPager mVpBanner;
+    private BannerLine mLine;
+    private List<BannerEntity> mEntities = new ArrayList<>();
     private BannerPagerAdapter mAdapter;
 
     public BannerView(Context context) {
-        super(context);
-        initView();
+        this(context, null);
     }
 
     public BannerView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        initView();
+        this(context, attrs, 0);
     }
 
-    private void initView() {
+    public BannerView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         View.inflate(getContext(), R.layout.banner_view, this);
-        vp_banner = (ViewPager) this.findViewById(R.id.vp_banner);
-        line = (BannerLine) this.findViewById(R.id.line);
+        mVpBanner = (ViewPager) this.findViewById(R.id.vp_banner);
+        mLine = (BannerLine) this.findViewById(R.id.line);
+        TypedArray typeArray = context.obtainStyledAttributes(attrs,
+                R.styleable.QingtingBanner);
+        int lineColor = typeArray.getColor(R.styleable.QingtingBanner_qt_line_color, ContextCompat.getColor(getContext(), R.color.banner_red));
+        typeArray.recycle();
+        mLine.setLineColor(lineColor);
     }
 
     public void setEntities(List<BannerEntity> entities) {
@@ -41,27 +47,27 @@ public class BannerView extends FrameLayout {
     }
 
     private void addExtraPage(List<BannerEntity> entities) {
-        this.entities.add(entities.get(entities.size() - 1));
-        this.entities.addAll(entities);
-        this.entities.add(entities.get(0));
+        mEntities.add(entities.get(entities.size() - 1));
+        mEntities.addAll(entities);
+        mEntities.add(entities.get(0));
     }
 
     private void showBanner() {
-        line.setPageWidth(entities.size());
-        mAdapter = new BannerPagerAdapter(getContext(), entities);
-        vp_banner.setAdapter(mAdapter);
-        vp_banner.setCurrentItem(1, false);
-        vp_banner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mLine.setPageWidth(mEntities.size());
+        mAdapter = new BannerPagerAdapter(getContext(), mEntities);
+        mVpBanner.setAdapter(mAdapter);
+        mVpBanner.setCurrentItem(1, false);
+        mVpBanner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                line.setPageScrolled(position, positionOffset);
+                mLine.setPageScrolled(position, positionOffset);
                 if (positionOffsetPixels == 0.0) {
-                    if (position == entities.size() - 1) {
-                        vp_banner.setCurrentItem(1, false);
+                    if (position == mEntities.size() - 1) {
+                        mVpBanner.setCurrentItem(1, false);
                     } else if (position == 0) {
-                        vp_banner.setCurrentItem(entities.size() - 2, false);
+                        mVpBanner.setCurrentItem(mEntities.size() - 2, false);
                     } else {
-                        vp_banner.setCurrentItem(position);
+                        mVpBanner.setCurrentItem(position);
                     }
                 }
             }
