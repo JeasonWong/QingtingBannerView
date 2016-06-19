@@ -84,4 +84,10 @@ public class BannerView extends FrameLayout {
         });
     }
 
+    public void setOnBannerClickListener(OnBannerClickListener clickListener) {
+        if (mAdapter != null) {
+            mAdapter.setOnBannerClickListener(clickListener);
+        }
+    }
+
 }

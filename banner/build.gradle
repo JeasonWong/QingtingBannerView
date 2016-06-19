@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'me.wangyuwei' // Change this to match your package name
-version = '1.0.2' // Change this to match your version number
+version = '1.0.6' // Change this to match your version number
 
 buildscript {
     repositories {
@@ -21,8 +21,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 3
+        versionName "1.0.6"
     }
     buildTypes {
         release {
@@ -68,16 +68,21 @@ bintray {
     pkg {
         repo = 'maven'
         name = 'QingTingBanner'
+        desc = "A simple banner has infinite loop and animated line."
 
         version {
-            name = '1.0.2'
-            desc = 'imitate QingTing banner'
+            name = '1.0.6'
+            desc = 'add onClickListener'
             vcsTag = 'android, banner'
         }
 
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/JeasonWong/QingtingBannerView.git'
         websiteUrl = 'https://github.com/JeasonWong/QingtingBannerView'
+
+        labels = ['android']
+        publish = true
+        publicDownloadNumbers = true
     }
     configurations = ['archives']
 }

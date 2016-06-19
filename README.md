@@ -29,7 +29,7 @@ Step 2. Add the dependency in the form
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:banner:1.0.2'
+  compile 'me.wangyuwei:banner:1.0.6'
 }
 ```
 
@@ -55,6 +55,19 @@ dependencies {
 ```java
     mBannerView.setEntities(entities);
 ```
+
+#### Step 4 : set banner click listener :
+```java
+    mBannerView.setOnBannerClickListener(new OnBannerClickListener() {
+                @Override
+                public void onClick(int position) {
+                    Toast.makeText(MainActivity.this, position + "=> " + entities.get(position).title, Toast.LENGTH_SHORT).show();
+                }
+            });
+```
+
+
+
 
 
 ##**Lincense**

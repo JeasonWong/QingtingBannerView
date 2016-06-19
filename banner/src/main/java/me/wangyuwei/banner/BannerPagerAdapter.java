@@ -16,6 +16,7 @@ public class BannerPagerAdapter extends PagerAdapter {
     private Context mContext;
     private List<BannerEntity> mEntities = new ArrayList<>();
     private List<BannerLayout> mLayouts = new ArrayList<>();
+    private OnBannerClickListener mClickListener;
 
     public BannerPagerAdapter(Context context, List<BannerEntity> entities) {
         mContext = context;
@@ -42,8 +43,18 @@ public class BannerPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-        container.addView(mLayouts.get(position), 0);
+    public Object instantiateItem(ViewGroup container, final int position) {
+
+        BannerLayout bannerLayout = mLayouts.get(position);
+        bannerLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mClickListener != null) {
+                    mClickListener.onClick(position - 1);
+                }
+            }
+        });
+        container.addView(bannerLayout, 0);
         return mLayouts.get(position);
     }
 
@@ -55,6 +66,10 @@ public class BannerPagerAdapter extends PagerAdapter {
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
         super.setPrimaryItem(container, position, object);
+    }
+
+    public void setOnBannerClickListener(OnBannerClickListener clickListener) {
+        this.mClickListener = clickListener;
     }
 
 }

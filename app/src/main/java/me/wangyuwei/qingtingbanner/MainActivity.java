@@ -2,6 +2,7 @@ package me.wangyuwei.qingtingbanner;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 import me.wangyuwei.banner.BannerEntity;
 import me.wangyuwei.banner.BannerView;
+import me.wangyuwei.banner.OnBannerClickListener;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         Banner banner = JSON.parseObject(readAssets(), Banner.class);
 
-        List<BannerEntity> entities = new ArrayList<>();
+        final List<BannerEntity> entities = new ArrayList<>();
         for (int i = 0; i < banner.getRecommends().size(); i++) {
             BannerEntity entity = new BannerEntity();
             entity.imageUrl = banner.getRecommends().get(i).getThumb();
@@ -40,8 +42,14 @@ public class MainActivity extends AppCompatActivity {
             entities.add(entity);
         }
 
-
         mBannerView.setEntities(entities);
+        mBannerView.setOnBannerClickListener(new OnBannerClickListener() {
+            @Override
+            public void onClick(int position) {
+                Toast.makeText(MainActivity.this, position + "=> " + entities.get(position).title, Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 
