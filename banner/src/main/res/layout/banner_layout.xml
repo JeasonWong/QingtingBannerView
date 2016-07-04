@@ -13,15 +13,17 @@
 
     <TextView
         android:id="@+id/tv_banner_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:padding="8dp"
         android:layout_marginLeft="4dp"
         android:lines="1"
         android:ellipsize="end"
-        android:textColor="@color/banner_gery_dark"
-        tools:text="123" />
+        android:textColor="#FFF"
+        tools:text="123"
+        android:background="#888"
+        android:alpha="0.8"/>
 
 
 </RelativeLayout>
