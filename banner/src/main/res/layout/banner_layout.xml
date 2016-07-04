@@ -17,13 +17,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:padding="8dp"
-        android:layout_marginLeft="4dp"
         android:lines="1"
         android:ellipsize="end"
         android:textColor="#FFF"
         tools:text="123"
         android:background="#888"
-        android:alpha="0.8"/>
+        android:alpha="0.8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 
 </RelativeLayout>
