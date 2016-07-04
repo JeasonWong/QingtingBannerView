@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, position + "=> " + entities.get(position).title, Toast.LENGTH_SHORT).show();
             }
         });
+        // set auto scroll
+        mBannerView.setAutoScroll(3);
 
 
     }
@@ -57,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         String json = "";
         try {
             InputStream inputStream = this.getAssets().open("banner.json");
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
+            int         size        = inputStream.available();
+            byte[]      buffer      = new byte[size];
             inputStream.read(buffer);
             inputStream.close();
             json = new String(buffer, "utf-8");
