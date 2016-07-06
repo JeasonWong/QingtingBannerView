@@ -47,6 +47,7 @@ public class BannerView extends FrameLayout {
     }
 
     private void addExtraPage(List<BannerEntity> entities) {
+        mEntities.clear();
         mEntities.add(entities.get(entities.size() - 1));
         mEntities.addAll(entities);
         mEntities.add(entities.get(0));
