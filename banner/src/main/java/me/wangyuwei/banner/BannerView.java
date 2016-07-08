@@ -1,7 +1,10 @@
 package me.wangyuwei.banner;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -10,16 +13,21 @@ import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * 作者： 巴掌 on 16/6/9 17:32
  */
 public class BannerView extends FrameLayout {
 
-    private ViewPager mVpBanner;
+    private ViewPager  mVpBanner;
     private BannerLine mLine;
     private List<BannerEntity> mEntities = new ArrayList<>();
     private BannerPagerAdapter mAdapter;
+
+    private int   currentIdx = 0;
+    private Timer mTimer     = null;
 
     public BannerView(Context context) {
         this(context, null);
@@ -36,7 +44,8 @@ public class BannerView extends FrameLayout {
         mLine = (BannerLine) this.findViewById(R.id.line);
         TypedArray typeArray = context.obtainStyledAttributes(attrs,
                 R.styleable.QingtingBanner);
-        int lineColor = typeArray.getColor(R.styleable.QingtingBanner_qt_line_color, ContextCompat.getColor(getContext(), R.color.banner_red));
+        int lineColor =
+                typeArray.getColor(R.styleable.QingtingBanner_qt_line_color, ContextCompat.getColor(getContext(), R.color.banner_red));
         typeArray.recycle();
         mLine.setLineColor(lineColor);
     }
@@ -56,11 +65,13 @@ public class BannerView extends FrameLayout {
         mLine.setPageWidth(mEntities.size());
         mAdapter = new BannerPagerAdapter(getContext(), mEntities);
         mVpBanner.setAdapter(mAdapter);
-        mVpBanner.setCurrentItem(1, false);
+        mVpBanner.setCurrentItem(1, true);
+        currentIdx = 1;
         mVpBanner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 mLine.setPageScrolled(position, positionOffset);
+                currentIdx = position;
                 if (positionOffsetPixels == 0.0) {
                     if (position == mEntities.size() - 1) {
                         mVpBanner.setCurrentItem(1, false);
@@ -83,6 +94,39 @@ public class BannerView extends FrameLayout {
             }
         });
     }
+
+    /**
+     * set auto scroll time
+     *
+     * @param sec int the second between the switch
+     */
+    public void setAutoScroll(int sec) {
+        if (this.mTimer != null) {
+            this.mTimer.cancel();
+            this.mTimer = null;
+        }
+        this.mTimer = new Timer("Banner Scroller Timer");
+        TimerTask scrollerTask = new TimerTask() {
+            @Override
+            public void run() {
+                mHandler.sendMessage(new Message());
+            }
+        };
+        this.mTimer.schedule(scrollerTask, sec * 1000, sec * 1000);
+    }
+
+    @SuppressLint("HandlerLeak")
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (currentIdx >= mEntities.size()) {
+                currentIdx = 0;
+            }
+            mVpBanner.setCurrentItem(currentIdx, true);
+            currentIdx++;
+        }
+    };
 
     public void setOnBannerClickListener(OnBannerClickListener clickListener) {
         if (mAdapter != null) {

@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 public class BannerLayout extends FrameLayout {
 
     private ImageView mIvBanner;
-    private TextView mTvBannerTitle;
+    private TextView  mTvBannerTitle;
 
     public BannerLayout(Context context) {
         this(context, null);
