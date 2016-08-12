@@ -57,6 +57,7 @@ public class BannerView extends FrameLayout {
         mAdapter = new BannerPagerAdapter(getContext(), mEntities);
         mVpBanner.setAdapter(mAdapter);
         mVpBanner.setCurrentItem(1, false);
+        mVpBanner.clearOnPageChangeListeners();
         mVpBanner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
