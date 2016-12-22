@@ -73,12 +73,12 @@ dependencies {
     @Override
     public void onStart() {
         super.onStart();
-        bannerView.startAutoScroll();
+        mBannerView.startAutoScroll();
     }
 
     @Override
     public void onStop() {
-        bannerView.stopAutoScroll();
+        mBannerView.stopAutoScroll();
         super.onStop();
     }
 ```
