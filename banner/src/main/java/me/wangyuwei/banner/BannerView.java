@@ -21,13 +21,13 @@ import java.util.TimerTask;
  */
 public class BannerView extends FrameLayout {
 
-    private long autoScrollDelay = 5000;
-    private Timer autoScrollTimer;
+    private long mAutoScrollDelay = 5000;
+    private Timer mAutoScrollTimer;
     private ViewPager mVpBanner;
     private BannerLine mLine;
     private List<BannerEntity> mEntities = new ArrayList<>();
     private BannerPagerAdapter mAdapter;
-    private Handler mainHandler;
+    private Handler mMainHandler;
 
     public BannerView(Context context) {
         this(context, null);
@@ -47,7 +47,7 @@ public class BannerView extends FrameLayout {
         int lineColor = typeArray.getColor(R.styleable.QingtingBanner_qt_line_color, ContextCompat.getColor(getContext(), R.color.banner_red));
         typeArray.recycle();
         mLine.setLineColor(lineColor);
-        mainHandler = new Handler(context.getMainLooper());
+        mMainHandler = new Handler(context.getMainLooper());
     }
 
     public void setEntities(List<BannerEntity> entities) {
@@ -105,26 +105,26 @@ public class BannerView extends FrameLayout {
     }
 
     public void startAutoScroll() {
-        autoScrollTimer = new Timer();
-        autoScrollTimer.schedule(new TimerTask() {
+        mAutoScrollTimer = new Timer();
+        mAutoScrollTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                mainHandler.post(new Runnable() {
+                mMainHandler.post(new Runnable() {
                     @Override
                     public void run() {
                         nextScroll();
                     }
                 });
             }
-        }, autoScrollDelay, autoScrollDelay);
+        }, mAutoScrollDelay, mAutoScrollDelay);
     }
 
     public void stopAutoScroll() {
-        autoScrollTimer.cancel();
+        mAutoScrollTimer.cancel();
     }
 
     public void setAutoScrollDelay(long delay) {
-        this.autoScrollDelay = delay;
+        this.mAutoScrollDelay = delay;
     }
 
     public void setOnBannerClickListener(OnBannerClickListener clickListener) {
