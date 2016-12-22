@@ -2,6 +2,7 @@ package me.wangyuwei.banner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -10,16 +11,23 @@ import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * 作者： 巴掌 on 16/6/9 17:32
+ * Updated by: hendrawd
+ * Update: add auto scroll feature
  */
 public class BannerView extends FrameLayout {
 
+    private long autoScrollDelay = 5000;
+    private Timer autoScrollTimer;
     private ViewPager mVpBanner;
     private BannerLine mLine;
     private List<BannerEntity> mEntities = new ArrayList<>();
     private BannerPagerAdapter mAdapter;
+    private Handler mainHandler;
 
     public BannerView(Context context) {
         this(context, null);
@@ -39,6 +47,7 @@ public class BannerView extends FrameLayout {
         int lineColor = typeArray.getColor(R.styleable.QingtingBanner_qt_line_color, ContextCompat.getColor(getContext(), R.color.banner_red));
         typeArray.recycle();
         mLine.setLineColor(lineColor);
+        mainHandler = new Handler(context.getMainLooper());
     }
 
     public void setEntities(List<BannerEntity> entities) {
@@ -63,13 +72,7 @@ public class BannerView extends FrameLayout {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 mLine.setPageScrolled(position, positionOffset);
                 if (positionOffsetPixels == 0.0) {
-                    if (position == mEntities.size() - 1) {
-                        mVpBanner.setCurrentItem(1, false);
-                    } else if (position == 0) {
-                        mVpBanner.setCurrentItem(mEntities.size() - 2, false);
-                    } else {
-                        mVpBanner.setCurrentItem(position);
-                    }
+                    setViewPagerItemPosition(position);
                 }
             }
 
@@ -85,10 +88,48 @@ public class BannerView extends FrameLayout {
         });
     }
 
+    private void setViewPagerItemPosition(int position) {
+        if (position == mEntities.size() - 1) {
+            mVpBanner.setCurrentItem(1, false);
+        } else if (position == 0) {
+            mVpBanner.setCurrentItem(mEntities.size() - 2, false);
+        } else {
+            mVpBanner.setCurrentItem(position);
+        }
+    }
+
+    private void nextScroll() {
+        int position = mVpBanner.getCurrentItem();
+        mLine.setPageScrolled(position + 1, 0);
+        setViewPagerItemPosition(position + 1);
+    }
+
+    public void startAutoScroll() {
+        autoScrollTimer = new Timer();
+        autoScrollTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                mainHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        nextScroll();
+                    }
+                });
+            }
+        }, autoScrollDelay, autoScrollDelay);
+    }
+
+    public void stopAutoScroll() {
+        autoScrollTimer.cancel();
+    }
+
+    public void setAutoScrollDelay(long delay) {
+        this.autoScrollDelay = delay;
+    }
+
     public void setOnBannerClickListener(OnBannerClickListener clickListener) {
         if (mAdapter != null) {
             mAdapter.setOnBannerClickListener(clickListener);
         }
     }
-
 }
