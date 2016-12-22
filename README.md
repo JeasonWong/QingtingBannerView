@@ -12,6 +12,7 @@ A simple banner has infinite loop and animated line.
 ## Feature
 * Infinite loop
 * Animated line in bottom
+* Auto scroll
 
 ## Import
 
@@ -67,7 +68,20 @@ dependencies {
 ```
 
 
+#### Use auto scroll(Optional)
+```java
+    @Override
+    public void onStart() {
+        super.onStart();
+        mBannerView.startAutoScroll();
+    }
 
+    @Override
+    public void onStop() {
+        mBannerView.stopAutoScroll();
+        super.onStop();
+    }
+```
 
 
 ##**License**
