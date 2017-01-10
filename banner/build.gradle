@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'me.wangyuwei' // Change this to match your package name
-version = '1.0.8' // Change this to match your version number
+version = '1.0.9' // Change this to match your version number
 
 buildscript {
     repositories {
@@ -71,7 +71,7 @@ bintray {
         desc = "A simple banner has infinite loop and animated line."
 
         version {
-            name = '1.0.8'
+            name = '1.0.9'
             desc = 'add onClickListener'
             vcsTag = 'android, banner'
         }

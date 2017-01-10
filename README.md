@@ -29,7 +29,7 @@ Step 2. Add the dependency in the form
 
 ```gradle
 dependencies {
-  compile 'me.wangyuwei:banner:1.0.6'
+  compile 'me.wangyuwei:banner:1.0.9'
 }
 ```
 
