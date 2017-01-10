@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // set auto scroll
-        mBannerView.setAutoScroll(3);
+        //mBannerView.setAutoScroll(3);
 
 
     }
